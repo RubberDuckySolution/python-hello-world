@@ -1,8 +1,10 @@
+############ FUNCTION ARGUMENTS ############
+
 # The signature of the function is: 
 #       def - special keyword in python to indicate a function is being defined
 #       describe_arguments - the function name
 #       (single_argument) - the function parameters, ie the arguments or data you provide the function to perform work on
-def describe_arguments(single_argument):
+def describe_argument(single_argument):
     print(f'First argument : {single_argument}')
 
 
@@ -27,14 +29,14 @@ def describe_arguments(single_argument, *argv):
 
 # **kwargs is more special python syntax that allows us to give arguments with names, rather than by position
 #       eg describe_arguments(amount=5, multiplier=2, name='scott')
-def describe_arguments(**kwargs):
+def describe_kwarguments(**kwargs):
     for key, value in kwargs.items():
         print(f'{key} : {value}')
 
 
 # We can combine both methods to have a dynamic list of arguments, as well as named ones
 #       eg describe_arguments("print", "this", "string", "please", name='scott', amount=5)
-def describe_arguments(*argv, **kwargs):
+def describe_all_kwarguments(*argv, **kwargs):
     print('All following arguments:')
     for arg in argv:
         print(arg)
@@ -44,10 +46,32 @@ def describe_arguments(*argv, **kwargs):
 
 
 # A function may take no arguments at all:
-def describe_arguments():
+def describe_no_arguments():
     print('I dont do much at all')
 
 
 
 
-# FUNCTION OVERLOADING
+########### FUNCTION RETURN STATEMENTS ############
+# So far the functions shown in this file just print information without doing anything (you may remember this as void functions in c++)
+# Generally we want a function to actually do or change something, we have it give us this result via a return statement 
+def return_sum(x, y):
+    print(f'Got numbers: {x} & {y}')
+    # Here we create a new variable called result
+    # We assign it the value of the provided numbers added together
+    result = x + y
+    # Now we use the keyword 'return' which ends the function and gives the value of result
+    return result
+
+
+# We can also return multiple values from a function    
+def return_multiple_values(a_number, a_string):
+    print(f'Received a number: {a_number}')
+    doubled = 2*a_number
+    print(f'Number x 2: {doubled}')
+
+    upper = a_string.upper()
+    print(f'Received a string: {a_string}')
+    print(f'String in uppercase: {upper}')
+
+    return doubled, upper
