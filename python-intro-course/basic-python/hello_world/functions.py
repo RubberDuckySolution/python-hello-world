@@ -51,6 +51,8 @@ def describe_no_arguments():
     print('I dont do much at all')
 
 
+# TODO: add example with default values for arguments
+
 
 
 ########### FUNCTION RETURN STATEMENTS ############
