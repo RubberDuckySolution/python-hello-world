@@ -8,7 +8,7 @@ import io
 # You can import code from other python files within the same project too
 # We use the syntax: from {file path} import {function/class names}
 from functions import describe_arguments, describe_argument, describe_all_kwarguments, \
-describe_kwarguments, describe_no_arguments, return_multiple_values, return_sum
+describe_kwarguments, describe_no_arguments, return_multiple_values, return_sum, return_no_values
 
 
 # Next you define the functions and classes your script will call
@@ -88,6 +88,12 @@ def test_returning():
     # We can use the built in function len() to find how many items were returned
     print(len(values))
     print('============================================')
+
+    print('============================================')
+    nothing = return_no_values(3, 6)
+    print(nothing)
+    print(type(nothing))
+    print('============================================')
     
 
 
@@ -99,5 +105,6 @@ if __name__ == '__main__':
     print('running main application')
 
     # test_perform_action()
-    test_arguments()
+    # test_arguments()
     test_returning()
+    

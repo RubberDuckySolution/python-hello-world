@@ -19,7 +19,7 @@ def describe_arguments(*argv):
 
 
 # We can use both types of parameters, in case we know we need to treat the first argument differently
-def describe_arguments(single_argument, *argv):
+def describe_arguments_2(single_argument, *argv):
     print(f'First argument : {single_argument}')
     
     print('All following arguments:')
@@ -29,6 +29,7 @@ def describe_arguments(single_argument, *argv):
 
 # **kwargs is more special python syntax that allows us to give arguments with names, rather than by position
 #       eg describe_arguments(amount=5, multiplier=2, name='scott')
+#       eg describe_arguments(5, 2, 'scott')
 def describe_kwarguments(**kwargs):
     for key, value in kwargs.items():
         print(f'{key} : {value}')
@@ -75,3 +76,10 @@ def return_multiple_values(a_number, a_string):
     print(f'String in uppercase: {upper}')
 
     return doubled, upper
+
+
+# We can return no value (at least explicity) like a void function
+# We will see that python returns something on our behalf anyway
+def return_no_values(x, y):
+    print(x)
+    print(y)
